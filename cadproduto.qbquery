@@ -1,0 +1,18 @@
+﻿SELECT * FROM cadprod c;
+CREATE TABLE CADPROD(
+NOME VARCHAR(40),
+MARCA VARCHAR(40),
+NCOD INT(6),
+DTVAL INT(6),
+NLOTE INT(5),
+PRECO FLOAT(4),
+);
+ass ConnectionFactory {
+     public Connection getFACTORY() {
+		 try {
+			return DriverManager.getConnection("jdbc:mysql://localhost/projetojava","seu-nome-de-usuario","sua-senha");
+		 }         
+		 catch(SQLException excecao) {
+			throw new RuntimeException(excecao);
+		 }
+     }
